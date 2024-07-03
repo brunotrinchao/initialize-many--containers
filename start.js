@@ -5,6 +5,7 @@ const fs = require('fs');
 require('dotenv').config()
 
 const ALIAS = process.env.ALIAS
+const FILE = process.env.FILE_EXIST_FOLDER
 const PATH_PROJECTS = process.env.PATH_PROJECTS
 const INSTRUCION_NOT_FILE = process.env.INSTRUCION_NOT_FILE
 const INSTRUCION_WITH_FILE = process.env.INSTRUCION_WITH_FILE
@@ -28,8 +29,11 @@ const formatContainerName = (name) => {
 
 const checkWatcherFile = (container) => {
   return new Promise((resolve, reject) => {
+    if(!PATH_PROJECTS || !FILE){
+      resolve(false)
+    }
     const containerPath = `${PATH_PROJECTS}${container}`;
-    fs.access(path.join(containerPath, '.watcher.php'), fs.constants.F_OK, (err) => {
+    fs.access(path.join(containerPath, FILE), fs.constants.F_OK, (err) => {
       if (err) {
         resolve(false);
       } else {
