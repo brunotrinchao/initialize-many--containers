@@ -11,7 +11,7 @@ npm install
 ```
 
 ## Settings ⚙️
-Rename file .env_deafult for .env and edit your preference.
+Rename file .env default to .env and edit your preference.
 If the container have alias Ex: service-db, add "service-" at the value. Ex:
 ```sh
 ALIAS=hyperf-
