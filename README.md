@@ -41,6 +41,14 @@ If exist file in the service the folder, have to execut instruction. Ex:
 ```sh
 INSTRUCION_WITH_FILE='php bin/hyperf.php server:watch'
 ```
+Terminal by used for show log selected Ex:
+```sh
+TERMINAL_WINDOWS='cmd.exe'
+```
+Ignored services selection list Ex:
+```sh
+SERVICES_IGNORE='db|redis'
+```
 
 ## Using 🌟
 Execute command:
